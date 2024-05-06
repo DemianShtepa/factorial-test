@@ -34,7 +34,7 @@ func validateBody() func(writer http.ResponseWriter, request *http.Request, para
 		writer.Header().Add("Content-Type", "application/json")
 
 		if err := json.NewDecoder(request.Body).Decode(&body); err != nil {
-			writer.WriteHeader(400)
+			writer.WriteHeader(http.StatusBadRequest)
 
 			response := errorResponseBody{Err: "Incorrect input"}
 			if err = json.NewEncoder(writer).Encode(response); err != nil {
