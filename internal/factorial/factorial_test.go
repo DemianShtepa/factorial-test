@@ -10,22 +10,22 @@ func TestCalculate(t *testing.T) {
 	cases := []struct {
 		title  string
 		input  uint64
-		output uint64
+		output string
 	}{
 		{
 			title:  "0! = 1",
 			input:  0,
-			output: 1,
+			output: "1",
 		},
 		{
 			title:  "8! = 40320",
 			input:  8,
-			output: 40320,
+			output: "40320",
 		},
 		{
 			title:  "16! = 20922789888000",
 			input:  16,
-			output: 20922789888000,
+			output: "20922789888000",
 		},
 	}
 

@@ -15,8 +15,8 @@ type requestBody struct {
 }
 
 type responseBody struct {
-	A uint64 `json:"a!"`
-	B uint64 `json:"b!"`
+	A string `json:"a!"`
+	B string `json:"b!"`
 }
 
 type errorResponseBody struct {
@@ -51,7 +51,7 @@ func validateBody() func(writer http.ResponseWriter, request *http.Request, para
 
 func handle(body requestBody) func(http.ResponseWriter, *http.Request, httprouter.Params) {
 	return func(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-		var aFactorial, bFactorial uint64
+		var aFactorial, bFactorial string
 		var wg sync.WaitGroup
 		wg.Add(2)
 
